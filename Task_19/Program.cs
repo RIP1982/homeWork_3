@@ -7,9 +7,9 @@
 Console.Clear();
 
 int number = Input("Введите пятизначное число: ");
-int i = 1;
-int n = 5;
-double numberN = 0;
+//int i = 1;
+//int n = 5;
+//double numberN = 0;
 
  
 if(number < 10000 || number > 100000)
