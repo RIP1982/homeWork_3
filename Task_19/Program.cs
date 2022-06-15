@@ -18,25 +18,41 @@ if(number < 10000 || number > 100000)
 	 return;
 }
  
-while(i <= 5 && n >= 0)
-{
-    double pow1 = Math.Pow(10, n);
-    double pow2 = Math.Pow(10, i);
-	double div = number % pow2 / pow2;
-	double rounding = Math.Round(div, 1);
-    double result = numberN + rounding * pow1;
-	numberN = result;
-    i = i + 1;
-	n = n - 1;
-}
+// С начала решение было такое:
+
+// while(i <= 5 && n >= 0)
+// {
+//     double pow1 = Math.Pow(10, n);
+//     double pow2 = Math.Pow(10, i);
+// 	double div = number % pow2 / pow2;
+//     Console.WriteLine(div);
+// 	double rounding = Math.Round(div, 1);
+//     double result = numberN + rounding * pow1;
+// 	numberN = result;
+//     i = i + 1;
+// 	n = n - 1;
+//     Console.WriteLine(result);
+//} - подвело округление)
+
+// Дальше пришло решение попроще)
+
+int oldValue = number;
+int newValue = 0;
  
-if(number == numberN)
+while(number > 0)
 {
-    Console.WriteLine($"Число {number} является палиндромом!"); }
+    int div = number % 10;
+    newValue = newValue * 10 + div;
+    number = number / 10;
+    Console.WriteLine(newValue);
+}
+if(oldValue == newValue)
+{
+    Console.WriteLine($"Число {oldValue} является палиндромом!"); }
  
 else
 {
-    Console.WriteLine($"Число {number} не является палиндромом!"); }
+    Console.WriteLine($"Число {oldValue} не является палиндромом!"); }
 
 int Input(string output)
 {
